@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Pro Writer Check</title>
+ <style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto:700');
+    *{
+margin:0;
+padding:0;
+box-sizing: border-box;
+font-family:'Roboto',sans-serif;
+}
+:root{
+    --clr:#2c363f;
+}
+body
+{
+    background:var(--clr);
+}
+header{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #2196f3;
+  padding: 20px 50px;
+  display:flex;
+  align-items: center;
+}
+header .logo{
+  position: relative;
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: 600;
+}
+#container{
+  color:#999;
+  text-transform: uppercase;
+  font-size: 36px;
+  font-weight: bold;
+  padding-top: 200px;
+  margin-left: 400px;
+  display: block;
+}
+#flip{
+  height:50px;
+  overflow:hidden;
+}
+#flip>div>div{
+  color:#fff;
+  padding: 4px 12px;
+  height:45px;
+  margin-bottom: 45px;
+  display: inline-block;
+}
+#flip div:first-child{
+  animation:show 5s linear infinite;
+}
+#flip div div{
+  background: #42c48a;
+}
+#flip div:first-child div{
+  background: #4ec7f3;
+}
+@keyframes show {
+  0% {margin-top: -270px;}
+  5% {margin-top: -180px;}
+  33% {margin-top: -180px;}
+  38% {margin-top: -90px;}
+  66% {margin-top: -90px;}
+  71% {margin-top: 0px;}
+  99.99% {margin-top: 0px;}
+  100% {margin-top: 270px;}
+}
+
+
+#container2 .wrapper{
+  display: flex;
+  padding: 20px;
+  height:100vh;
+  margin-top:20% ;
+  margin-left:300px;
+  margin-bottom: 20%;
+}
+#container2 .wrapper #text1{
+  background: #eed9c4;
+  height:50vh;
+  width:100vh;
+  border-radius: 5px;
+  border:2px solid black;
+  padding:5px;
+  margin:3px;
+  margin-left: 40px;
+}
+
+
+#container2 .wrapper #text2{
+  background: #eed9c4;
+  height:50vh;
+  width:100vh;
+  border-radius: 5px;
+  border:2px solid black;
+  padding:5px;
+  margin:4px;
+  margin-left:40px;
+}
+#container2 .wrapper #btn{
+  margin-left: 60px;
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  padding: 15px 32px;
+}
+
+
+
+footer{
+  width: 100%;
+  background: #2196f3;
+  padding: 20px 50px;
+  align-items: center;
+  text-align: center;
+}
+footer #end{
+  color: #fff;
+  font-size: 1.3em;
+  font-weight: 600;
+  align-content: center;
+}
+</style>
+</head>
+
+<body>
+   <!-- header section -->
+ <header>
+  <div class="logo">Pro Writer Check</div>
+  
+ </header>
+<!-- end  header section -->
+<!--main section-->
+<!--container 1-->
+<div id="container">
+You Can
+<div id="flip">
+<div>
+  <div>Check your Grammer</div>
+</div>
+<div>
+  <div>Check your Spelling Mistake</div>
+</div>
+</div>
+Here
+</div>           
+<!--container 2-->
+<div id="container2">
+  <div class="wrapper">
+    <form method="post">
+      {% csrf_token %}
+      <div>
+      <textarea type="text" placeholder="Enter Your Text Here" name="text" id="text1">{{user_input_text}}</textarea>
+    </div>
+    <div>
+      <button type="submit" id="btn">Check</button>
+    </div>
+    <div>
+      <textarea id="text2" name="result">{{ result }}</textarea>
+    </div>
+    </form>
+  </div>
+</div>
+<!--end of main section-->
+  <!-- footer section -->
+  <footer>
+    <div id="end">
+        &copy;All Rights Reserved By the Developer
+        </div>
+  </footer>
+  <!-- end  footer section -->
+
+
+</body>
+</body>
+
+</html>
