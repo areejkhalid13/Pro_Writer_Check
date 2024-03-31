@@ -14,4 +14,4 @@ def home_fun(request):
             results = happy_tt.generate_text(user_input_text, args=top_k_sampling_settings)
             result=results.text
     
-    return render(request, 'index.html', {'result': result,'user_input_text':user_input_text})
+    return render(request, 'home.html', {'result': result,'user_input_text':user_input_text})
